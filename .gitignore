@@ -1,0 +1,14 @@
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log*
+.tmp
+*.temp
+.cache/
+node_modules/
+.env
+.env.*
+*.zip
+*.rar
+*.7z
