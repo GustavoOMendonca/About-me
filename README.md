@@ -1,2 +1,12 @@
 # About-me
-Site com informações sobre mim
+
+Site com informações relevantes sobre mim
+
+```Estrutura
+meu-site/
+│
+├── index.html
+├── style.css
+└── img/
+    
+```
