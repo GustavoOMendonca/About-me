@@ -1,3 +1,6 @@
+/* ==========================================================================
+   1. RESET E CONFIGURAÇÕES GLOBAIS
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -18,6 +21,25 @@ body {
     margin: auto;
 }
 
+ul {
+    list-style: none;
+}
+
+p {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+h2 {
+    color: #1a1a1a;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+/* ==========================================================================
+   2. PADRONIZAÇÃO DE LINKS E BOTÕES
+   ========================================================================== */
 a {
     display: inline-block;
     padding: 10px 20px;
@@ -32,16 +54,15 @@ a {
     cursor: pointer;
 }
 
-ul {
-    list-style: none;
-}
-
 a:hover {
     background-color: #323232;
     color: #ffffff;
     text-decoration: none;
 }
 
+/* ==========================================================================
+   3. CABEÇALHO E NAVEGAÇÃO (HEADER & NAV)
+   ========================================================================== */
 header {
     background-color: #ffffff; 
     border-bottom: 1px solid #eaeaea;
@@ -57,6 +78,7 @@ nav {
     padding: 20px 0;
 }
 
+/* Logo Circular GO. */
 nav h2 {
     display: flex;
     align-items: center;
@@ -79,6 +101,8 @@ nav ul {
     display: flex;
     gap: 25px;
 }
+
+/* Limpa o estilo de caixa padrão para os links textuais do menu */
 nav ul li a {
     border: none;
     padding: 0;
@@ -88,9 +112,11 @@ nav ul li a {
 }
 
 nav ul li a:hover {
+    background-color: transparent;
     color: #1a1a1a;
 }
 
+/* Botão do GitHub específico no Header */
 .github-btn {
     display: inline-block;
     padding: 10px 20px;
@@ -109,7 +135,9 @@ nav ul li a:hover {
     color: #ffffff;
 }
 
-
+/* ==========================================================================
+   4. ESTRUTURA E CONTEÚDO PRINCIPAL (MAIN & SECTIONS)
+   ========================================================================== */
 main {
     padding: 60px 0; 
 }
@@ -122,20 +150,7 @@ section {
     margin-bottom: 80px; 
 }
 
-h2 {
-    color: #1a1a1a;
-    font-size: 28px;
-    font-weight: 600;
-    margin-bottom: 30px;
-    padding-bottom: 0;
-    border-bottom: none;
-}
-
-p {
-    margin-bottom: 20px;
-    color: #555;
-}
-
+/* Seção de Apresentação (Hero) */
 .apresentacao {
     display: flex;
     justify-content: space-between;
@@ -174,6 +189,7 @@ p {
 
 .texto-apresentacao a:hover {
     background-color: #333333;
+    color: #ffffff;
 }
 
 .foto img {
@@ -184,26 +200,9 @@ p {
     border: 5px solid #eaeaea; 
 }
 
-.tecnologias {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-top: 10px;
-}
-
-.tecnologia {
-    background-color: #f4f4f4;
-    color: #333; 
-    padding: 8px 16px;
-    border-radius: 20px; 
-    font-size: 14px;
-    border: 1px solid #eaeaea;
-}
-
-.tecnologia:hover {
-    background-color: #eaeaea;
-}
-
+/* ==========================================================================
+   5. SEÇÃO DE PROJETOS E DETALHES (AGENDA)
+   ========================================================================== */
 .projeto {
     border: 1px solid #eaeaea;
     padding: 30px;
@@ -226,14 +225,104 @@ p {
     align-items: center;
 }
 
-.projeto a::after {
-    content: '';
+/* Estilo da Imagem Interna do Projeto (agenda.html) */
+.imagem-projeto {
+    width: 100%;
+    max-width: 500px; 
+    display: block;
+    margin: 30px auto 15px auto; 
+    border-radius: 6px;
+    border: 1px solid #eaeaea; 
 }
 
-
-.projeto a:hover::after {
-    transform: none;
+.imagem-projeto + p {
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 40px;
 }
+
+/* ==========================================================================
+   6. SEÇÃO DE TECNOLOGIAS (MINHA STACK)
+   ========================================================================== */
+.stack-secao {
+    margin-bottom: 80px;
+}
+
+.stack-secao > p {
+    color: #666;
+    margin-bottom: 35px;
+}
+
+.grid-stack {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card-tecnologia {
+    border: 1px solid #eaeaea;
+    padding: 25px;
+    border-radius: 6px;
+    background-color: #ffffff;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card-tecnologia:hover {
+    border-color: #1a1a1a;
+    transform: translateY(-2px);
+}
+
+.header-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.icone-tech {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+.card-tecnologia h3 {
+    font-size: 18px;
+    color: #1a1a1a;
+    font-weight: 600;
+}
+
+.card-tecnologia p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 0; 
+}
+
+/* Elementos legados (opcionais, caso ainda use a lista de tecnologias simples) */
+.tecnologias {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.tecnologia {
+    background-color: #f4f4f4;
+    color: #333; 
+    padding: 8px 16px;
+    border-radius: 20px; 
+    font-size: 14px;
+    border: 1px solid #eaeaea;
+}
+
+.tecnologia:hover {
+    background-color: #eaeaea;
+}
+
+/* ==========================================================================
+   7. RODAPÉ (FOOTER)
+   ========================================================================== */
 footer {
     background-color: #f9f9f9;
     color: #555;
@@ -243,12 +332,13 @@ footer {
     border-top: 1px solid #eaeaea;
 }
 
-
+/* ==========================================================================
+   8. MEDIA QUERIES (RESPONSIVIDADE)
+   ========================================================================== */
 @media (max-width: 768px) {
     .container {
         width: 92%;
     }
-    
 
     nav ul {
         display: none;
@@ -272,87 +362,9 @@ footer {
     h2 {
         font-size: 24px;
     }
-}
 
-.imagem-projeto {
-    width: 100%;
-    max-width: 500px; 
-    display: block;
-    margin: 30px auto 15px auto; 
-    border-radius: 6px;
-    border: 1px solid #eaeaea; 
-}
-
-.imagem-projeto + p {
-    text-align: center;
-    font-size: 14px;
-     color: #666; /* Oh meu Deus */
-    margin-bottom: 40px;
-}
-
-.stack-secao {
-    margin-bottom: 80px;
-}
-
-.stack-secao > p {
-    color: #666;
-    margin-bottom: 35px;
-}
-
-/* Cria uma grade que se ajusta automaticamente dependendo da tela */
-.grid-stack {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
-
-/* Caixa sutil para cada tecnologia seguindo a linha clean */
-.card-tecnologia {
-    border: 1px solid #eaeaea;
-    padding: 25px;
-    border-radius: 6px;
-    background-color: #ffffff;
-    transition: transform 0.2s ease, border-color 0.2s ease;
-}
-
-/* Pequeno efeito ao passar o mouse */
-.card-tecnologia:hover {
-    border-color: #1a1a1a;
-    transform: translateY(-2px);
-}
-
-/* Alinha o ícone e o nome da tecnologia lado a lado */
-.header-card {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 15px;
-}
-
-/* Controla o tamanho exato dos ícones */
-.icone-tech {
-    width: 35px;
-    height: 35px;
-    object-fit: contain;
-}
-
-.card-tecnologia h3 {
-    font-size: 18px;
-    color: #1a1a1a;
-    font-weight: 600;
-}
-
-.card-tecnologia p {
-    font-size: 14px;
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 0; /* Remove margem extra interna */
-}
-
-/* Ajuste específico para celulares */
-@media (max-width: 768px) {
     .grid-stack {
-        grid-template-columns: 1fr; /* Força uma coluna única no celular */
+        grid-template-columns: 1fr; 
         gap: 20px;
     }
 }
