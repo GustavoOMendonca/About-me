@@ -58,12 +58,21 @@ nav {
 }
 
 nav h2 {
-    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #1a1a1a; 
+    background-color: transparent;
     color: #1a1a1a;
+    font-size: 18px;
     font-weight: 700;
-    border-bottom: none;
-    padding-bottom: 0;
-    margin-bottom: 0;
+    letter-spacing: -0.5px; 
+    margin: 0;
+    padding: 0;
+    padding-left: 2px; 
 }
 
 nav ul {
@@ -221,7 +230,7 @@ p {
     content: '';
 }
 
-}
+
 .projeto a:hover::after {
     transform: none;
 }
@@ -279,4 +288,71 @@ footer {
     font-size: 14px;
      color: #666; /* Oh meu Deus */
     margin-bottom: 40px;
+}
+
+.stack-secao {
+    margin-bottom: 80px;
+}
+
+.stack-secao > p {
+    color: #666;
+    margin-bottom: 35px;
+}
+
+/* Cria uma grade que se ajusta automaticamente dependendo da tela */
+.grid-stack {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Caixa sutil para cada tecnologia seguindo a linha clean */
+.card-tecnologia {
+    border: 1px solid #eaeaea;
+    padding: 25px;
+    border-radius: 6px;
+    background-color: #ffffff;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+/* Pequeno efeito ao passar o mouse */
+.card-tecnologia:hover {
+    border-color: #1a1a1a;
+    transform: translateY(-2px);
+}
+
+/* Alinha o ícone e o nome da tecnologia lado a lado */
+.header-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+/* Controla o tamanho exato dos ícones */
+.icone-tech {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+.card-tecnologia h3 {
+    font-size: 18px;
+    color: #1a1a1a;
+    font-weight: 600;
+}
+
+.card-tecnologia p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 0; /* Remove margem extra interna */
+}
+
+/* Ajuste específico para celulares */
+@media (max-width: 768px) {
+    .grid-stack {
+        grid-template-columns: 1fr; /* Força uma coluna única no celular */
+        gap: 20px;
+    }
 }
