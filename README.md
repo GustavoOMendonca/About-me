@@ -3,9 +3,10 @@
 Site com informações relevantes sobre mim
 
 ```Estrutura
-meu-site/
+About-me/
 │
 ├── index.html
+├── agenda.html
 ├── style.css
 └── img/
     
